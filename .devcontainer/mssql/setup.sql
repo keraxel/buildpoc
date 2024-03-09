@@ -1,4 +1,4 @@
-CREATE LOGIN [buildpoc-internal-tests-app] WITH PASSWORD = 'qwerty1'
+CREATE LOGIN [buildpoc-internal-tests-app] WITH PASSWORD = 'qwerty1!'
 
 CREATE DATABASE [buildpoc-internal-template]
 GO

@@ -1,0 +1,40 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Build & Test
+      uses: devcontainers/ci@v0.3
+      with:
+        imageName: ghcr.io/keraxel/buildpoc-devcontainer
+        cacheFrom: ghcr.io/keraxel/buildpoc-devcontainer
+        push: always
+        runCmd: cd build && sh test-publish.sh
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifacts
+        path: ${{ github.workspace }}/artifacts
+        if-no-files-found: error

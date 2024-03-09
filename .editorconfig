@@ -1,0 +1,113 @@
+[*.{cs,fs,csx,fsx}]
+indent_style = space
+indent_size = 4
+
+dotnet_sort_system_directives_first = true
+dotnet_style_qualification_for_field = false:silent
+dotnet_style_qualification_for_property = false:silent
+dotnet_style_qualification_for_method = false:silent
+dotnet_style_qualification_for_event = false:silent
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+dotnet_style_predefined_type_for_member_access = true:suggestion
+dotnet_style_readonly_field = true:suggestion
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:suggestion
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:silent
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+dotnet_style_prefer_auto_properties = true:silent
+dotnet_style_prefer_conditional_expression_over_assignment = true:silent
+dotnet_style_prefer_conditional_expression_over_return = true:silent
+
+[*.cs]
+csharp_style_var_for_built_in_types=true:suggestion
+csharp_style_var_when_type_is_apparent=true:suggestion
+csharp_style_var_elsewhere=true:suggestion
+
+dotnet_naming_symbols.private_const_fields.capitalization = all_upper
+
+csharp_place_attribute_on_same_line = false
+csharp_place_record_field_attribute_on_same_line = true
+csharp_max_invocation_arguments_on_line = 10
+csharp_max_formal_parameters_on_line = 10
+
+##
+## .NET source code analysis
+dotnet_diagnostic.CA1014.severity = none # Mark assemblies with CLSCompliantAttribute
+dotnet_diagnostic.CA1031.severity = none # Do not catch general exception types
+dotnet_diagnostic.CA1032.severity = none # Implement standard exception constructors
+dotnet_diagnostic.CA1034.severity = none # Nested types should not be visible
+dotnet_diagnostic.CA1062.severity = none # Validate arguments of public methods
+dotnet_diagnostic.CA1063.severity = none # Implement IDisposable correctly
+dotnet_diagnostic.CA1303.severity = none # Do not pass literals as localized parameters
+dotnet_diagnostic.CA1305.severity = none # Specify IFormatProvider
+dotnet_diagnostic.CA1307.severity = none # Specify StringComparison for clarity
+dotnet_diagnostic.CA1310.severity = none # Specify StringComparison for correctness
+dotnet_diagnostic.CS1591.severity = none # Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CA1707.severity = none # Identifiers should not contain underscores
+dotnet_diagnostic.CA1716.severity = none # Identifiers should not match keywords
+dotnet_diagnostic.CA1813.severity = none # Avoid unsealed attributes
+dotnet_diagnostic.CA1816.severity = none # Call GC.SuppressFinalize correctly
+dotnet_diagnostic.CA1822.severity = none # Mark members as static
+dotnet_diagnostic.CA1848.severity = none # Use the LoggerMessage delegates
+dotnet_diagnostic.CA1852.severity = none # Seal internal types
+dotnet_diagnostic.CA2000.severity = none # Dispose objects before losing scope
+dotnet_diagnostic.CA2007.severity = none # Do not directly await a Task
+dotnet_diagnostic.CA2227.severity = none # Collection properties should be read only
+
+##
+
+##
+## StyleCop.Analyzers
+dotnet_diagnostic.SA0001.severity = none # XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA1000.severity = none # The keyword 'new' should not be followed by a space
+dotnet_diagnostic.SA1027.severity = none # Use tabs correctly
+dotnet_diagnostic.SA1028.severity = none # Code must not contain trailing whitespace
+dotnet_diagnostic.SA1005.severity = none # Single line comment should begin with a space
+dotnet_diagnostic.SA1101.severity = none # Prefix local calls with this
+dotnet_diagnostic.SA1118.severity = none # The parameter spans multiple lines
+dotnet_diagnostic.SA1128.severity = none # Put constructor initializers on their own line
+dotnet_diagnostic.SA1201.severity = none # A method should not follow a class
+dotnet_diagnostic.SA1202.severity = none # 'public' members should come before 'private' members
+dotnet_diagnostic.SA1204.severity = none # Static members should appear before non-static members
+dotnet_diagnostic.SA1309.severity = none # Field should not begin with an underscore
+dotnet_diagnostic.SA1310.severity = none # Field should not contain an underscore
+dotnet_diagnostic.SA1402.severity = none # File may only contain a single type
+dotnet_diagnostic.SA1407.severity = none # Arithmetic expressions should declare precedence
+dotnet_diagnostic.SA1408.severity = none # Conditional expressions must declare precedence
+dotnet_diagnostic.SA1413.severity = none # Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1503.severity = none # Braces should not be ommitted
+dotnet_diagnostic.SA1512.severity = none # Single-line comments should not be followed by blank line
+dotnet_diagnostic.SA1515.severity = none # Single line comment must be preceded by blank line
+dotnet_diagnostic.SA1516.severity = none # Elements should be separated by blank line
+dotnet_diagnostic.SA1600.severity = none # Elements should be documented
+dotnet_diagnostic.SA1602.severity = none # Enumeration items should be documented
+dotnet_diagnostic.SA1614.severity = none # Element parameter documentation should have text
+dotnet_diagnostic.SA1616.severity = none # Element return value documentation should have text
+dotnet_diagnostic.SA1622.severity = none # Generic type parameter documentation should have text
+dotnet_diagnostic.SA1623.severity = none # The property's documentation summary text should begin with: 'Gets or sets'
+dotnet_diagnostic.SA1629.severity = none # Documentation text must e nd with a period
+dotnet_diagnostic.SA1633.severity = none # The file header is missing or not located at the top of the file
+dotnet_diagnostic.SA1636.severity = none # The file header copyright text should match the copyright text from the settings
+dotnet_diagnostic.SA1642.severity = none # Constructor summary documentation should begin with standard text
+dotnet_diagnostic.SA1649.severity = none # File name should match first type name
+
+## END StyleCop.Analyzers
+##
+
+
+##
+## Roslyn Analyzers
+dotnet_diagnostic.RS1036.severity  = none
+dotnet_diagnostic.RS2008.severity  = none
+## END Roslyn Analyzers
+##
+
+##
+## AsyncFixer
+dotnet_diagnostic.AsyncFixer01.severity  = suggestion
+## END AsyncFixer
+##

@@ -1,0 +1,39 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <RootDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\'))</RootDirectory>
+
+        <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts/obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(MSBuildThisFileDirectory)artifacts/bin/$(MSBuildProjectName)/</BaseOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <CompilerVisibleProperty Include="MemoryPackGenerator_TypeScriptOutputDirectory" />
+        <CompilerVisibleProperty Include="MemoryPackGenerator_TypeScriptImportExtension" />
+        <CompilerVisibleProperty Include="MemoryPackGenerator_TypeScriptEnableNullableTypes" />
+    </ItemGroup>
+    <PropertyGroup>
+        <MemoryPackGenerator_TypeScriptOutputDirectory>$(RootDirectory)..\frontend\src\communication\memorypack</MemoryPackGenerator_TypeScriptOutputDirectory>
+        <MemoryPackGenerator_TypeScriptImportExtension></MemoryPackGenerator_TypeScriptImportExtension>
+        <MemoryPackGenerator_TypeScriptEnableNullableTypes>true</MemoryPackGenerator_TypeScriptEnableNullableTypes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(RootDirectory)stylecop.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="AsyncFixer" Version="1.6.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>

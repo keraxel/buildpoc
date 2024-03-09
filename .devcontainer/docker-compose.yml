@@ -30,42 +30,6 @@ services:
       ACCEPT_EULA: Y
       SA_PASSWORD: qwerty1!
 
-  buildpoc-frontend:
-    container_name: buildpoc-frontend
-    image: buildpoc.frontend:dev
-    build:
-      context: ..
-      dockerfile: Dockerfile.dev.frontend
-    network_mode: service:buildpoc-db
-    volumes:
-      - ..:/workspace
-      - buildpoc_frontend_user_home_volume:/root
-
-  buildpoc-backend-web:
-    container_name: buildpoc-backend-web
-    image: buildpoc.backend.web:dev
-    build:
-      context: ..
-      dockerfile: Dockerfile.dev.backend.web
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    network_mode: service:buildpoc-db
-    volumes:
-      - ..:/workspace
-      - buildpoc_backend_user_home_volume:/root
-
-  buildpoc-backend-someservice:
-    container_name: buildpoc-backend-someservice
-    image: buildpoc.backend.someservice:dev
-    build:
-      context: ..
-      dockerfile: Dockerfile.dev.backend.someservice
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    network_mode: service:buildpoc-db
-    volumes:
-      - ..:/workspace
-      - buildpoc_backend_user_home_volume:/root
 
 volumes:
   buildpoc_frontend_user_home_volume:
