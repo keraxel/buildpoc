@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build
+
+WORKDIR /workspace
+ENTRYPOINT [ \
+    "/bin/sh", "-c", \
+    "dotnet restore backend/Buildpoc.Someservice/Buildpoc.Someservice.csproj && dotnet run --project backend/Buildpoc.Someservice/Buildpoc.Someservice.csproj" \
+]
