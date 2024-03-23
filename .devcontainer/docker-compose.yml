@@ -1,11 +1,7 @@
-version: '3.9'
-
 services:
   buildpoc-devcontainer:
     container_name: buildpoc-devcontainer
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/keraxel/buildpoc-devcontainer
 
     volumes:
       - ../..:/workspaces:cached
@@ -15,9 +11,6 @@ services:
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:buildpoc-db
-
-    # Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    # user: root
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)
@@ -29,9 +22,3 @@ services:
     environment:
       ACCEPT_EULA: Y
       SA_PASSWORD: qwerty1!
-
-
-volumes:
-  buildpoc_frontend_user_home_volume:
-  vscode_cache_volume:
-  buildpoc_backend_user_home_volume:

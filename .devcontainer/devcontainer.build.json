@@ -1,0 +1,55 @@
+{
+	"name": "Buildpoc",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"mssql.connections": [
+					{
+						"server": "localhost,1433",
+						"database": "",
+						"authenticationType": "SqlLogin",
+						"user": "sa",
+						"password": "qwerty1!",
+						"emptyPasswordInput": false,
+						"savePassword": true,
+						"profileName": "buildpoc-db-dev"
+					}
+				]
+			},
+
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit",
+				"ms-mssql.mssql",
+				"ms-playwright.playwright"
+			]
+		}
+	},
+
+	"forwardPorts": [1433],
+	"portsAttributes": {
+	},
+
+	"postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/dotnet:2": {
+			"version": "8.0"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts",
+			"nvmVersion": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/typescript:2": {
+			"version": "latest"
+		}
+	}
+}
