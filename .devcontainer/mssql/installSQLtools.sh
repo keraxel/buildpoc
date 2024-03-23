@@ -9,7 +9,7 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-${DISTRO}-
 apt-get update
 
 echo "Installing mssql-tools"
-ACCEPT_EULA=Y apt-get -y install unixodbc-dev msodbcsql18 libunwind8 mssql-tools18
+ACCEPT_EULA=Y apt-get -y install unixodbc-dev msodbcsql17 libunwind8 mssql-tools
 
 echo "Installing sqlpackage"
 curl -sSL -o sqlpackage.zip "https://aka.ms/sqlpackage-linux"
