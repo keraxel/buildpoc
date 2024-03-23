@@ -2,7 +2,7 @@
 set -e
 set -x
 
-sleep 20s
+sleep 15s
 bash .devcontainer/mssql/postCreateCommand.sh 'qwerty1!' './bin/Debug/' './.devcontainer/mssql/'
 
 cd frontend
