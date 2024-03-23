@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+set -x
+
 dacpac="false"
 sqlfiles="false"
 SApassword=$1
