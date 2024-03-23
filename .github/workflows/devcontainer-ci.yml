@@ -27,9 +27,8 @@ jobs:
     - name: Prebuild devcontainer
       uses: devcontainers/ci@v0.3
       with:
-        imageName: ghcr.io/${{ github.repository_owner }}/buildpoc-devcontainer
+        imageName: ghcr.io/${{ github.repository_owner }}/buildpoc-devcontainer:1.0
         cacheFrom: ghcr.io/${{ github.repository_owner }}/buildpoc-devcontainer:1.0
-        imageTag: "1.0"
         push: always
 
   build-test:
