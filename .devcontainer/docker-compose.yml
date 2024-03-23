@@ -1,7 +1,7 @@
 services:
   buildpoc-devcontainer:
     container_name: buildpoc-devcontainer
-    image: ghcr.io/keraxel/buildpoc-devcontainer
+    image: ghcr.io/keraxel/buildpoc-devcontainer:1.0
 
     volumes:
       - ../..:/workspaces:cached
